@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { LibraryService } from '../../services/library';
 import { LibraryNode } from '../../models/library-node';
 import { TreeNodeComponent } from '../tree-node/tree-node';
+import { SearchBoxComponent } from '../search-box/search-box';
 
 @Component({
   selector: 'app-library-tree',
   standalone: true,
-  imports: [FormsModule, TreeNodeComponent],
+  imports: [TreeNodeComponent, SearchBoxComponent],
   templateUrl: './library-tree.html',
   styleUrls: ['./library-tree.css'],
 })

@@ -1,12 +1,8 @@
 <div class="container">
   <h2>Библиотека</h2>
 
-  <div class="search-box">
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Поиск по библиотеке..." />
-    @if (searchTerm) {
-      <button (click)="searchTerm = ''">✕</button>
-    }
-  </div>
+  <!-- Двусторонняя привязка через value/valueChange -->
+  <app-search-box [(value)]="searchTerm" placeholder="Поиск по библиотеке..."></app-search-box>
 
   @if (searchTerm) {
     <p class="hint">Найдено совпадений: {{ countMatches(tree) }}</p>
