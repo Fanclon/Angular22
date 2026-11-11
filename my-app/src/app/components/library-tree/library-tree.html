@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Библиотека</h2>
+
+  <div class="search-box">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Поиск по библиотеке..." />
+    @if (searchTerm) {
+      <button (click)="searchTerm = ''">✕</button>
+    }
+  </div>
+
+  @if (searchTerm) {
+    <p class="hint">Найдено совпадений: {{ countMatches(tree) }}</p>
+  }
+
+  <div class="tree">
+    @for (node of tree; track node.id) {
+      <app-tree-node [node]="node" [searchTerm]="searchTerm" />
+    }
+  </div>
+</div>
