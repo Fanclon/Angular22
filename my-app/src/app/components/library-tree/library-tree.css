@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.hint {
+  color: #666;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.tree {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Библиотека</h2>
+
+  <!-- Двусторонняя привязка через value/valueChange -->
+  <app-search-box [(value)]="searchTerm" placeholder="Поиск по библиотеке..."></app-search-box>
+
+  @if (searchTerm) {
+    <p class="hint">Найдено совпадений: {{ countMatches(tree) }}</p>
+  }
+
+  <div class="tree">
+    @for (node of tree; track node.id) {
+      <app-tree-node [node]="node" [searchTerm]="searchTerm" />
+    }
+  </div>
+</div>

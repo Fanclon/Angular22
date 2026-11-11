@@ -1,0 +1,36 @@
+.node {
+  margin-left: 16px;
+}
+
+.node-label {
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.node-label:hover {
+  background: #f0f0f0;
+}
+
+.node-label.highlight {
+  background: #fff3b0;
+}
+
+.toggle {
+  width: 12px;
+  display: inline-block;
+  color: #666;
+}
+
+.children {
+  border-left: 1px dashed #ccc;
+  margin-left: 8px;
+}
+
+:host ::ng-deep mark {
+  background: #ffeb3b;
+  padding: 0;
+}

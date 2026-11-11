@@ -1,0 +1,18 @@
+<div class="node">
+  <div class="node-label" [class.highlight]="isMatched(node.name)" (click)="toggle()">
+    @if (node.children?.length) {
+      <span class="toggle">{{ expanded ? '▼' : '▶' }}</span>
+    } @else {
+      <span class="toggle">•</span>
+    }
+    <span [innerHTML]="highlightText(node.name)"></span>
+  </div>
+
+  @if (expanded && node.children) {
+    <div class="children">
+      @for (child of node.children; track child.id) {
+        <app-tree-node [node]="child" [searchTerm]="searchTerm" />
+      }
+    </div>
+  }
+</div>

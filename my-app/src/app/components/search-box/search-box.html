@@ -1,0 +1,11 @@
+<div class="search-box">
+  <input
+    type="text"
+    [ngModel]="value"
+    (ngModelChange)="onInput($event)"
+    [placeholder]="placeholder"
+  />
+  @if (value) {
+    <button type="button" (click)="clear()">✕</button>
+  }
+</div>
