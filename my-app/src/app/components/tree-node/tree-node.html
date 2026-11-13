@@ -1,5 +1,11 @@
 <div class="node">
-  <div class="node-label" [class.highlight]="isMatched(node.name)" (click)="toggle()">
+  <div
+    class="node-label"
+    [class.highlight]="isMatched(node.name)"
+    [appHoverZoom]="1.05"
+    [zoomColor]="'#d1f783'"
+    (click)="toggle()"
+  >
     @if (node.children?.length) {
       <span class="toggle">{{ expanded ? '▼' : '▶' }}</span>
     } @else {
