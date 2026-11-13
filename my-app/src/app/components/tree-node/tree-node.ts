@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { LibraryNode } from '../../models/library-node';
+import { HoverZoom } from '../../directives/hover-zoom';
 
 @Component({
   selector: 'app-tree-node',
   standalone: true,
-  imports: [TreeNodeComponent],
+  imports: [TreeNodeComponent, HoverZoom],
   templateUrl: './tree-node.html',
   styleUrls: ['./tree-node.css'],
 })
