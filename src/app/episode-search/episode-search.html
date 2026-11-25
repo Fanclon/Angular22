@@ -1,0 +1,25 @@
+<h2>Поиск эпизодов по названию</h2>
+
+<input [formControl]="searchControl" placeholder="Введите минимум 3 символа..." />
+
+@if (searchControl.value && searchControl.value.trim().length < 3) {
+  <p class="hint">Добавьте ещё буквы — минимум 3 символа.</p>
+}
+
+@if (loading) {
+  <p>Загрузка...</p>
+}
+
+@if (errorMessage) {
+  <p>{{ errorMessage }}</p>
+}
+
+@if (episodes$ | async; as episodes) {
+  <ul>
+    @for (ep of episodes; track ep.id) {
+      <li>{{ ep.episode }} — {{ ep.name }} ({{ ep.air_date }})</li>
+    } @empty {
+      <li>Эпизоды не найдены.</li>
+    }
+  </ul>
+}
